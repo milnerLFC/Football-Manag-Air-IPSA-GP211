@@ -20,12 +20,14 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
 from reportlab.platypus import Image as ImReport
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
+from fuzzywuzzy import process
 
 savepath = 'saves/'
 
 
 def results_season(t,imEcusson,chp,fenetre_stats):
     results = []
+
     def Classementdefault():
         sorted_teams = sorted(results, key=operator.itemgetter(1,8,6,3), reverse=True) #tri par Points (si égalité, par Goal Average et si encore égalité par Buts Pour). ordre de priorité conservé par la suite
         taillechp = len(sorted_teams)
@@ -33,28 +35,34 @@ def results_season(t,imEcusson,chp,fenetre_stats):
         return(dftable, taillechp)
     
     df, teams = prepair_df(chp)
+    for clubs in teams: 
+        team = process.extractOne(t,teams)[0]
+    
+    print(t,team)
     try:
         if chp != 'DNK' and chp != 'ARG' and chp != 'BRA' and chp != 'SWZ' and chp != 'MEX' and chp != 'IRL' and chp != 'USA' and chp != 'RUS' and chp != 'CHN'and chp != 'JPN'and chp != 'AUT' and chp != 'SWE' and chp != 'NOR' and chp != 'ROU' and chp != 'POL' :
         #exclusion de ces championnats car absence de données dans les fichiers CSV sur 'HTR'
-            dfFull = (df[np.logical_or(df['HomeTeam']== t,df['AwayTeam']== t)][['Date','Time','HomeTeam','AwayTeam','FTHG','FTAG','FTR','HTR']]) #df correspond à notre dataframe, np.logical sont des portes logiques permettant la comparaison et/ou de données du tableau (dataframe) créé
+            dfFull = (df[np.logical_or(df['HomeTeam']== team,df['AwayTeam']== team)][['Date','Time','HomeTeam','AwayTeam','FTHG','FTAG','FTR','HTR']]) #df correspond à notre dataframe, np.logical sont des portes logiques permettant la comparaison et/ou de données du tableau (dataframe) créé
             dfForme = dfFull.tail(5)
         else:
-            dfPartial = (df[np.logical_or(df['HomeTeam']== t,df['AwayTeam']== t)][['Date','Time','HomeTeam','AwayTeam','FTHG','FTAG','FTR']])
+            dfPartial = (df[np.logical_or(df['HomeTeam']== team,df['AwayTeam']== team)][['Date','Time','HomeTeam','AwayTeam','FTHG','FTAG','FTR']])
             dfForme = dfPartial.tail(5)
+
+        print(dfForme)
         
-        nbMatchs = len(df[np.logical_or(df['HomeTeam']== t ,df['AwayTeam']== t)]) #calcul du nbre de matchs joués par une équipe en testant la présence ou non de l'équipe itérée avec les colonnes HomeTeam & AwayTeam
-        TeamWins = len(df[np.logical_or(np.logical_and(df['HomeTeam']== t,df['FTR']=='H'),np.logical_and(df['AwayTeam']== t,df['FTR']=='A'))])
-        TeamDraws = len(df[np.logical_or(np.logical_and(df['HomeTeam']== t,df['FTR']=='D'),np.logical_and(df['AwayTeam']== t,df['FTR']=='D'))])
-        TeamLosses = len(df[np.logical_or(np.logical_and(df['HomeTeam']== t,df['FTR']=='A'),np.logical_and(df['AwayTeam']== t,df['FTR']=='H'))])
+        nbMatchs = len(df[np.logical_or(df['HomeTeam']== team ,df['AwayTeam']== team)]) #calcul du nbre de matchs joués par une équipe en testant la présence ou non de l'équipe itérée avec les colonnes HomeTeam & AwayTeam
+        TeamWins = len(df[np.logical_or(np.logical_and(df['HomeTeam']== team,df['FTR']=='H'),np.logical_and(df['AwayTeam']== team,df['FTR']=='A'))])
+        TeamDraws = len(df[np.logical_or(np.logical_and(df['HomeTeam']== team,df['FTR']=='D'),np.logical_and(df['AwayTeam']== team,df['FTR']=='D'))])
+        TeamLosses = len(df[np.logical_or(np.logical_and(df['HomeTeam']== team,df['FTR']=='A'),np.logical_and(df['AwayTeam']== team,df['FTR']=='H'))])
         
         ##FORME##
         
-        FormeButsPourDomi = int(dfForme[dfForme['HomeTeam']== t][['FTHG']].sum())          #somme des buts marqués à domicile
-        FormeButsPourExte = int(dfForme[dfForme['AwayTeam']== t][['FTAG']].sum())
+        FormeButsPourDomi = int(dfForme[dfForme['HomeTeam']== team][['FTHG']].sum())          #somme des buts marqués à domicile
+        FormeButsPourExte = int(dfForme[dfForme['AwayTeam']== team][['FTAG']].sum())
         FormeButs_Pour = FormeButsPourDomi + FormeButsPourExte                             #somme des buts marqués total
         
-        FormeButsContreDomi = int(dfForme[dfForme['HomeTeam']== t][['FTAG']].sum())
-        FormeButsContreExte = int(dfForme[dfForme['AwayTeam']== t][['FTHG']].sum())
+        FormeButsContreDomi = int(dfForme[dfForme['HomeTeam']== team][['FTAG']].sum())
+        FormeButsContreExte = int(dfForme[dfForme['AwayTeam']== team][['FTHG']].sum())
         FormeButs_Contre = FormeButsContreDomi + FormeButsContreExte
         
         forme = []
@@ -66,9 +74,9 @@ def results_season(t,imEcusson,chp,fenetre_stats):
             
         for m in range(1,lastplayed+1):
             dfLast = dfForme.tail(1)
-            if len(dfLast[np.logical_or(np.logical_and(dfLast['HomeTeam']== t,dfLast['FTR']=='H'),np.logical_and(dfLast['AwayTeam']== t,dfLast['FTR']=='A'))]) == 1:
+            if len(dfLast[np.logical_or(np.logical_and(dfLast['HomeTeam']== team,dfLast['FTR']=='H'),np.logical_and(dfLast['AwayTeam']== team,dfLast['FTR']=='A'))]) == 1:
                 forme.append('V')
-            elif len(dfLast[np.logical_or(np.logical_and(dfLast['HomeTeam']== t,dfLast['FTR']=='D'),np.logical_and(dfLast['AwayTeam']== t,dfLast['FTR']=='D'))]) == 1:
+            elif len(dfLast[np.logical_or(np.logical_and(dfLast['HomeTeam']== team,dfLast['FTR']=='D'),np.logical_and(dfLast['AwayTeam']== team,dfLast['FTR']=='D'))]) == 1:
                 forme.append('N')
             else:
                 forme.append('D')
@@ -79,29 +87,29 @@ def results_season(t,imEcusson,chp,fenetre_stats):
         formeLosses = forme.count('D')
         # print(forme)
         # print(f"{lastplayed} derniers matchs de {t} : ", formeWins, "Victoires", formeDraws, "Nuls", formeLosses, "Défaites" + "\n" + str(FormeButs_Pour), "Buts Marqués, ", str(FormeButs_Contre), "Buts Concédés")
-    
-    
-    
-        if chp != 'DNK' and chp != 'ARG' and chp != 'BRA' and chp != 'SWZ' and chp != 'MEX' and chp != 'IRL' and chp != 'USA' and chp != 'RUS' and chp != 'CHN'and chp != 'JPN'and chp != 'AUT' and chp != 'SWE' and chp != 'NOR' and chp != 'ROU' and chp != 'POL' :
-            TeamHTWins = len(df[np.logical_or(np.logical_and(df['HomeTeam']== t,df['HTR']=='H'),np.logical_and(df['AwayTeam']== t,df['HTR']=='A'))])
-            TeamHTDraws = len(df[np.logical_or(np.logical_and(df['HomeTeam']== t,df['HTR']=='D'),np.logical_and(df['AwayTeam']== t,df['HTR']=='D'))])
-            TeamHTLosses = len(df[np.logical_or(np.logical_and(df['HomeTeam']== t,df['HTR']=='A'),np.logical_and(df['AwayTeam']== t,df['HTR']=='H'))])
-            
-            TeamHTscoredHome = int(df[df['HomeTeam']== t][['HTHG']].sum())
-            TeamHTscoredAway = int(df[df['AwayTeam']== t][['HTAG']].sum())
 
-            TeamHTconcededHome = int(df[df['HomeTeam']== t][['HTAG']].sum())
-            TeamHTconcededAway = int(df[df['AwayTeam']== t][['HTHG']].sum())
+
+
+        if chp != 'DNK' and chp != 'ARG' and chp != 'BRA' and chp != 'SWZ' and chp != 'MEX' and chp != 'IRL' and chp != 'USA' and chp != 'RUS' and chp != 'CHN'and chp != 'JPN'and chp != 'AUT' and chp != 'SWE' and chp != 'NOR' and chp != 'ROU' and chp != 'POL' :
+            TeamHTWins = len(df[np.logical_or(np.logical_and(df['HomeTeam']== team,df['HTR']=='H'),np.logical_and(df['AwayTeam']== team,df['HTR']=='A'))])
+            TeamHTDraws = len(df[np.logical_or(np.logical_and(df['HomeTeam']== team,df['HTR']=='D'),np.logical_and(df['AwayTeam']== team,df['HTR']=='D'))])
+            TeamHTLosses = len(df[np.logical_or(np.logical_and(df['HomeTeam']== team,df['HTR']=='A'),np.logical_and(df['AwayTeam']== team,df['HTR']=='H'))])
+            
+            TeamHTscoredHome = int(df[df['HomeTeam']== team][['HTHG']].sum())
+            TeamHTscoredAway = int(df[df['AwayTeam']== team][['HTAG']].sum())
+
+            TeamHTconcededHome = int(df[df['HomeTeam']== team][['HTAG']].sum())
+            TeamHTconcededAway = int(df[df['AwayTeam']== team][['HTHG']].sum())
 
             totscoredHT = TeamHTscoredHome + TeamHTscoredAway
             totconcededHT = TeamHTconcededHome + TeamHTconcededAway
 
             #+ faire stats selon domicile ou extérieur
 
-            ShotsHome = int(df[df['HomeTeam']== t][['HS']].sum())
-            ShotsAway = int(df[df['AwayTeam']== t][['AS']].sum())
-            ShotsHomeTarg = int(df[df['HomeTeam']== t][['HST']].sum())
-            ShotsAwayTarg = int(df[df['AwayTeam']== t][['AST']].sum())
+            ShotsHome = int(df[df['HomeTeam']== team][['HS']].sum())
+            ShotsAway = int(df[df['AwayTeam']== team][['AS']].sum())
+            ShotsHomeTarg = int(df[df['HomeTeam']== team][['HST']].sum())
+            ShotsAwayTarg = int(df[df['AwayTeam']== team][['AST']].sum())
             
             ShotsTot = ShotsHome + ShotsAway
             ShotsTargTot = ShotsHomeTarg + ShotsAwayTarg
@@ -115,20 +123,20 @@ def results_season(t,imEcusson,chp,fenetre_stats):
             
             moyTarget = probTarget*100
             MoyOffTarget = (offTarget*100)
-    
-    
-    
+
+
+
             def newpoint_ON():
                 return np.random.randint(175,1000), np.random.randint(86, 350)
-                                      #(min_x, max_x)              #(min_y, max_y)
+                                        #(min_x, max_x)              #(min_y, max_y)
             
             pointsOn = (newpoint_ON() for p in range(int(moyTarget)))
             LonTarget = []
             for point in pointsOn:
-               LonTarget.append(point)
+                LonTarget.append(point)
             # print(LonTarget)
             zip(*LonTarget)
-    
+
             def newpoint_OFF():
                 # nboffpoint =0
                 
@@ -138,7 +146,7 @@ def results_season(t,imEcusson,chp,fenetre_stats):
                 else:
                     okpoint=False
                 return okpoint,offpoint
-    
+
             LoffTarget = []
             nboff=0
             while nboff<int(MoyOffTarget):
@@ -151,7 +159,7 @@ def results_season(t,imEcusson,chp,fenetre_stats):
             w = [i[0] for i in Ldensity]
             z = [i[1] for i in Ldensity]
                     
-       
+        
             img = plt.imread("images/backgrounds/ShotsRatioBG.png")
             x = 1183
             y = 467
@@ -172,41 +180,43 @@ def results_season(t,imEcusson,chp,fenetre_stats):
             ratiosavepath = f"temp/ratio{t}.png"
             plt.savefig(ratiosavepath, transparent=True, dpi = 128)
             plt.close()
-    
+
         
-        ButsPourDomi = int(df[df['HomeTeam']== t][['FTHG']].sum())          #somme des buts marqués à domicile
-        ButsPourExte = int(df[df['AwayTeam']== t][['FTAG']].sum())
+        ButsPourDomi = int(df[df['HomeTeam']== team][['FTHG']].sum())          #somme des buts marqués à domicile
+        ButsPourExte = int(df[df['AwayTeam']== team][['FTAG']].sum())
         Buts_Pour = ButsPourDomi + ButsPourExte                             #somme des buts marqués total
         
-        ButsContreDomi = int(df[df['HomeTeam']== t][['FTAG']].sum())
-        ButsContreExte = int(df[df['AwayTeam']== t][['FTHG']].sum())
+        ButsContreDomi = int(df[df['HomeTeam']== team][['FTAG']].sum())
+        ButsContreExte = int(df[df['AwayTeam']== team][['FTHG']].sum())
         Buts_Contre = ButsContreDomi + ButsContreExte
         
         Diff_Buts = Buts_Pour - Buts_Contre
         
         Points = int(TeamWins*3 + TeamDraws)
         results.append([t,Points, nbMatchs, TeamWins, TeamDraws, TeamLosses, Buts_Pour, Buts_Contre, Diff_Buts])
-    
+
         classement, taillechp = Classementdefault()
-    
+
         
-        Mpourcentage = [TeamWins, TeamLosses, TeamDraws]
-        labels = 'Victoires', 'Défaites', 'Matchs Nuls'
-        colors = ['#00FFFF','#0000FF', '#3366FF']
-        explode = (0.15, 0, 0)
-        plt.pie(Mpourcentage, explode=explode, colors=colors, autopct='%1.1f%%', shadow=True, startangle=165)
-        plt.title("Statistiques de " + t)
-        plt.legend(labels, title="Résultats", loc="center right", bbox_to_anchor = (1.15, 0.4))
-        plotsavepath = f"temp/plot{t}.png"
-        plt.savefig(plotsavepath)
-        # plt.show()
-        plt.close()
+        # Mpourcentage = [TeamWins, TeamLosses, TeamDraws]
+        # labels = 'Victoires', 'Défaites', 'Matchs Nuls'
+        # colors = ['#00FFFF','#0000FF', '#3366FF']
+        # explode = (0.15, 0, 0)
+        # plt.pie(Mpourcentage, explode=explode, colors=colors, autopct='%1.1f%%', shadow=True, startangle=165)
+        # plt.title("Statistiques de " + t)
+        # plt.legend(labels, title="Résultats", loc="center right", bbox_to_anchor = (1.15, 0.4))
+        # plotsavepath = f"temp/plot{t}.png"
+        # plt.savefig(plotsavepath)
+        # # plt.show()
+        # plt.close()
         
         fig, ax = plt.subplots(figsize=(22, ((nbMatchs+4)/3))) # set size frame
         ax.xaxis.set_visible(False)
         ax.yaxis.set_visible(False)
         ax.set_frame_on(False)  # no visible frame, uncomment if size is ok
         if chp != 'DNK' and chp != 'ARG' and chp != 'BRA' and chp != 'SWZ' and chp != 'MEX' and chp != 'IRL' and chp != 'USA' and chp != 'RUS' and chp != 'CHN'and chp != 'JPN'and chp != 'AUT' and chp != 'SWE' and chp != 'NOR' and chp != 'ROU' and chp != 'POL' :
+            print(dfFull)
+            print(len(dfFull.columns))
             tabla = table(ax, dfFull, loc='upper center', colWidths=[0.10225]*len(dfFull.columns))
         else:
             tabla = table(ax, dfPartial, loc='upper center', colWidths=[0.10225]*len(dfPartial.columns))
@@ -216,12 +226,12 @@ def results_season(t,imEcusson,chp,fenetre_stats):
         matchssavepath = f"temp/stats{t}.png"
         plt.savefig(matchssavepath, transparent=True)
         plt.close()
-    
+
         fig, ax2 = plt.subplots(figsize=(20, taillechp/3.5)) # set size frame
         ax2.xaxis.set_visible(False)
         ax2.yaxis.set_visible(False)
         ax2.set_frame_on(False)
-        cellcol=[['#FFCC99' if classement['TEAM'].iloc[i]==t else 'white' for j in range(len(classement.columns))] for i in range(taillechp)]
+        cellcol=[['#FFCC99' if classement['TEAM'].iloc[i]==team else 'white' for j in range(len(classement.columns))] for i in range(taillechp)]
         clst = table(ax2, classement, loc='upper center', colWidths=[0.1]*len(classement.columns),cellColours=cellcol)
         clst.auto_set_font_size(False)
         clst.set_fontsize(12)
@@ -331,7 +341,7 @@ def results_season(t,imEcusson,chp,fenetre_stats):
             Base de données provenant de : https://www.football-data.co.uk/</font>')
         Story.append(Paragraph(ptext, styles["Normal"]))
         Story.append(PageBreak())
-    
+
         
         try :
             if chp != 'DNK' and chp != 'ARG' and chp != 'BRA' and chp != 'SWZ' and chp != 'MEX' and chp != 'IRL' and chp != 'USA' and chp != 'RUS' and chp != 'CHN'and chp != 'JPN'and chp != 'AUT' and chp != 'SWE' and chp != 'NOR' and chp != 'ROU' and chp != 'POL' :

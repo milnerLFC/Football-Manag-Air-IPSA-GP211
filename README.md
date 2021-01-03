@@ -46,6 +46,7 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 # Packages / Librairies
 
 :warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
+
 :warning: ***WARNING : This program requires 'tensorflow probability'. This package can spoil or destroy your python installation. I recommand you to create a specific environment before.***
 
 
@@ -271,6 +272,7 @@ zstd                      1.4.5                h04227a9_0
 
 
 ***Programme soumis à la License CC BY-NC-SA 4.0***
+
 ***This program is under the CC BY-NC-SA 4.0 License***
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)

@@ -1,5 +1,21 @@
 # Football-Manag-Air-IPSA-GP211
 
+> **ATTENTION : Ce programme nécessite 'tensorflow probability', cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.**
+
+Football Manag'Air en 5 points c'est :
+
+[a] Une VAE qui crée des joueurs de football réalistes
+
+[x] Un système de transfert
+
+[v] La prédiction des résultats des matchs à venir
+
+[] Des fiches statistiques sur des centaines d'équipes
+
+[] Des statistiques sur des milliers de joueurs
+
+
+
 ## Résumé
 
 Le programme « Football Manag’Air » (FM) est une version 2.0 de « Football Datas » (https://github.com/milnerLFC/FOOTBALL-DATAS-IPSA) qui fut déjà l’année dernière orienté sur l’analyse de données footballistiques et particulièrement sur la prédiction des résultats des futurs matchs. Si cette fonctionnalité a été réintroduite cette année, ce n’est pas le but premier de ce projet. L’objectif premier de FM est de générer de nouveaux joueurs aux statistiques réalistes et donc fidèles à celles de FIFA sur le principe de la VAE afin d’alimenter une base de données accessible via SQL3. Les données exploitées permettent une approche précise du niveau des joueurs et ainsi d’au mieux définir de futurs transferts pour améliorer la qualité d’une équipe. Un autre défi était de trouver une bonne approche pour disséquer l’effectif et en faire ressortir les caractéristiques les plus importantes.
@@ -17,7 +33,7 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 
 *Football Datas : https://github.com/milnerLFC/FOOTBALL-DATAS-IPSA*
 
-##### Initial Dataset : https://www.kaggle.com/ekrembayar/fifa-21-complete-player-dataset
+*Initial Dataset : https://www.kaggle.com/ekrembayar/fifa-21-complete-player-dataset*
 
 # Packages / Librairies
 

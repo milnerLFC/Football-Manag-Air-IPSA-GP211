@@ -1,0 +1,11 @@
+***Programme soumis à la License CC BY-NC-SA 4.0***
+
+en : http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+
+fr : https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr
+
+es : https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+
+de : https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de
+
+nl : https://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl

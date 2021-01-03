@@ -1,6 +1,6 @@
 
 <p align="center">
- <font size="48">
+ <font size=48>
    Football Mang'Air IPSA
  </font>
 </p>

@@ -5,13 +5,13 @@
 
 **- [x] Une VAE qui crée des joueurs de football réalistes**
 
-**- [x] Un système de transfert
+**- [x] Un système de transfert**
 
-**- [x] La prédiction des résultats des matchs à venir
+- [x] **La prédiction des résultats des matchs à venir**
 
-**- [x] Des fiches statistiques sur des centaines d'équipes
+- **[x] Des fiches statistiques sur des centaines d'équipes**
 
-**- [x] Des statistiques sur des milliers de joueurs
+**- [x] Des statistiques sur des milliers de joueurs**
 
 <p align="center">:soccer::soccer::soccer:</p>
 

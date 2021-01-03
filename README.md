@@ -10,10 +10,11 @@ Football Manag'Air en 5 points c'est :
 - [x] Un système de transfert
 
 - [x] La prédiction des résultats des matchs à venir
-#### ***Jouer comporte des risques : isolement, endettement… Appelez le 09 74 75 13 13 (appel non surtaxé)***
+
 - [x] Des fiches statistiques sur des centaines d'équipes
 
 - [x] Des statistiques sur des milliers de joueurs
+### ***Jouer comporte des risques : isolement, endettement… Appelez le 09 74 75 13 13 (appel non surtaxé)***
 
 
 

@@ -1,4 +1,4 @@
-# Football Mang'Air IPSA
+# Football Manag'Air IPSA
 
 
 **Football Manag'Air en 5 points c'est :**

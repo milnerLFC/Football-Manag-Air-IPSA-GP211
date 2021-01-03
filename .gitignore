@@ -143,7 +143,5 @@ dmypy.json
 .prof
 
 # End of https://www.toptal.com/developers/gitignore/api/python
-databases/alldata.db
 .vscode/settings.json
-databases/alldata.db
 *.db

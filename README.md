@@ -38,7 +38,7 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 # Packages / Librairies
 
 #### Name                    Version                   Build  Channel
-
+```
 absl-py                   0.11.0                   pypi_0    pypi
 
 amply                     0.1.4                      py_0    conda-forge
@@ -251,3 +251,4 @@ xz                        5.2.5                h62dcd97_0
 zlib                      1.2.11               h62dcd97_4
 
 zstd                      1.4.5                h04227a9_0
+```

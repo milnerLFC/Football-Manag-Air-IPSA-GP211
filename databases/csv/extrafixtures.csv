@@ -1,13 +1,4 @@
 Country,League,Date,Time,Home,Away,PH,PD,PA,MaxH,MaxD,MaxA,AvgH,AvgD,AvgA
-Norway,Eliteserien,2020-12-22,17:00:00,Brann,Odd,2.05,3.96,3.39,2.1,4.04,3.45,2.03,3.81,3.28
-Norway,Eliteserien,2020-12-22,17:00:00,Kristiansund,Haugesund,1.57,4.73,5.3,1.6,4.9,5.4,1.56,4.55,5.03
-Norway,Eliteserien,2020-12-22,17:00:00,Mjondalen,Aalesund,1.33,6.19,7.92,1.37,6.25,9.6,1.32,5.68,7.95
-Norway,Eliteserien,2020-12-22,17:00:00,Sandefjord,Rosenborg,5.65,3.85,1.67,5.85,4.2,1.71,5.3,3.79,1.65
-Norway,Eliteserien,2020-12-22,17:00:00,Stromsgodset,Stabaek,2.1,4.01,3.25,2.15,4.01,3.4,2.08,3.79,3.18
-Norway,Eliteserien,2020-12-22,17:00:00,Valerenga,Start,1.64,3.96,5.69,1.65,4.4,5.96,1.6,4.04,5.33
-Romania,Liga 1,2020-12-22,19:00:00,CFR Cluj,U Craiova,1.84,3.38,5.08,1.87,3.4,5.08,1.8,3.25,4.65
-Switzerland,Super League,2020-12-22,19:30:00,St. Gallen,Young Boys,5.51,4.47,1.6,5.99,4.65,1.6,5.26,4.35,1.55
-Switzerland,Super League,2020-12-23,17:15:00,Luzern,Basel,2.63,3.71,2.64,2.7,3.71,2.64,2.56,3.5,2.54
-Switzerland,Super League,2020-12-23,17:15:00,Servette,Vaduz,1.69,3.79,5.74,1.7,4.0,5.81,1.65,3.73,5.28
-Switzerland,Super League,2020-12-23,19:30:00,Lugano,Lausanne,2.49,3.34,3.06,2.52,3.44,3.1,2.38,3.25,2.95
-Switzerland,Super League,2020-12-23,19:30:00,Zurich,Sion,1.83,4.06,4.22,1.86,4.14,4.33,1.81,3.83,3.96
+Argentina,Copa Diego Maradona,2020-12-29,20:10:00,Aldosivi,Rosario Central,2.84,3.32,2.53,2.98,3.4,2.59,2.79,3.16,2.48
+Argentina,Copa Diego Maradona,2020-12-29,22:20:00,Union de Santa Fe,Lanus,2.17,3.28,3.51,2.23,3.58,3.54,2.12,3.31,3.29
+Argentina,Copa Diego Maradona,2020-12-30,00:30:00,Atl. Tucuman,San Lorenzo,2.64,3.06,2.91,2.7,3.26,2.92,2.56,3.05,2.77

@@ -1,6 +1,6 @@
 # Football-Manag-Air-IPSA-GP211
 
-***:warning: ATTENTION : Ce programme nécessite 'tensorflow probability'.Cette librairire peut abîmer ou détruire votre installation python.Il est préférable de créer un environnement spécifique au préalable.***
+:warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'.Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
 
 
 Football Manag'Air en 5 points c'est :

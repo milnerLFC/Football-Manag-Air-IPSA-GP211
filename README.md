@@ -1,4 +1,4 @@
-# Football-Manag-Air-IPSA-GP211
+# :soccer: Football-Manag-Air-IPSA-GP211 :soccer:
 
 :warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
 

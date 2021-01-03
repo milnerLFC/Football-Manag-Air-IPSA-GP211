@@ -1,9 +1,5 @@
-
-<p align="center">
- <font-size=48>
-   Football Mang'Air IPSA
- </font>
-</p>
+# Football Mang'Air IPSA
+   
 
 :warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
 
@@ -46,6 +42,7 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 *Other Dataset : https://www.kaggle.com/stefanoleone992/fifa-21-complete-player-dataset*
 
 
+<center>:soccer::soccer::soccer:</center>
 
 # Packages / Librairies
 

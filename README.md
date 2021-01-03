@@ -1,7 +1,7 @@
 # Football Mang'Air IPSA
 
 
-Football Manag'Air en 5 points c'est :
+<p align = "center">Football Manag'Air en 5 points c'est :</p>
 
 - [x] Une VAE qui crée des joueurs de football réalistes
 

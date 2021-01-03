@@ -17,6 +17,8 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 
 *Football Datas : https://github.com/milnerLFC/FOOTBALL-DATAS-IPSA*
 
+##### Initial Dataset : https://www.kaggle.com/ekrembayar/fifa-21-complete-player-dataset
+
 # Packages / Librairies
 
 #### Name                    Version                   Build  Channel

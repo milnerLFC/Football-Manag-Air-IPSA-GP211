@@ -326,7 +326,9 @@ def team_global(team,fenetremain,imEcusson,selected_players,main_menu_font,dic_c
     plt.setp(mypie2, width=0.4, edgecolor='white')
     plt.margins(0,0)
     ax.set_title('Répartition Effectif', color = 'white',fontsize = 14, pad=24)
-    
+    if not os.path.exists('temp'):
+        os.makedirs('temp')
+
     plotsavepatheffectif = f"temp/effectif_{team}.png"
     plt.savefig(plotsavepatheffectif, transparent=True, dpi=224)
 

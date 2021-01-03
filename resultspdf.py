@@ -38,7 +38,6 @@ def results_season(t,imEcusson,chp,fenetre_stats):
     for clubs in teams: 
         team = process.extractOne(t,teams)[0]
     
-    print(t,team)
     try:
         if chp != 'DNK' and chp != 'ARG' and chp != 'BRA' and chp != 'SWZ' and chp != 'MEX' and chp != 'IRL' and chp != 'USA' and chp != 'RUS' and chp != 'CHN'and chp != 'JPN'and chp != 'AUT' and chp != 'SWE' and chp != 'NOR' and chp != 'ROU' and chp != 'POL' :
         #exclusion de ces championnats car absence de données dans les fichiers CSV sur 'HTR'

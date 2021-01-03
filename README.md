@@ -44,7 +44,7 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 # Packages / Librairies
 
 ```ruby
-Name                    Version                    Build     Channel
+Name                      Version                  Build     Channel
 
 absl-py                   0.11.0                   pypi_0    pypi
 

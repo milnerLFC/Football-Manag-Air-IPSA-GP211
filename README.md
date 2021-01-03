@@ -41,9 +41,10 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 
 *Other Dataset : https://www.kaggle.com/stefanoleone992/fifa-21-complete-player-dataset*
 
-
+ 
 <p align="center">:soccer::soccer::soccer:</p>
-
+ 
+ 
 # Packages / Librairies
 
 ```ruby
@@ -263,9 +264,9 @@ zlib                      1.2.11               h62dcd97_4
 zstd                      1.4.5                h04227a9_0
 ```
 
+
 <p align="center">:soccer::soccer::soccer:</p>
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ***Programme soumis à la License CC BY-NC-ND 4.0***
 

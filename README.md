@@ -288,5 +288,3 @@ zstd                      1.4.5                h04227a9_0
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### ***Jouer comporte des risques : isolement, endettement… Appelez le 09 74 75 13 13 (appel non surtaxé)***
-
-<p align ="center">:soccer::running:</p>

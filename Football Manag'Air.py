@@ -266,6 +266,7 @@ def main():
         fenetre_parameters.geometry(f'1280x720+{DW//6}+{DH//6}')
         fenetre_parameters.resizable(0, 0)
         fenetre_parameters.transient(fenetremain)
+        fenetre_parameters.iconphoto(False, PhotoImage(file='images/icones/root_icone.png'))
         background_image_param = PhotoImage(file = r"images/backgrounds/settings.png")
         
         canparam= Canvas(fenetre_parameters, width = 1280, height = 720)
@@ -569,10 +570,11 @@ def main():
         except:pass
         
     def team_maker():
-        try:
-            players, team, imEcusson,imJersey_home,imJersey_away,jersey_home = teamdata()
-            best_tactic(fenetremain,teamdata,selected_players)
-        except:pass
+        messagebox.showinfo("Formation en cours...","Soyez patients, cette fonctionnalité sera bientôt à jour... Revenez bientôt !")
+        # try:
+        #     players, team, imEcusson,imJersey_home,imJersey_away,jersey_home = teamdata()
+        #     best_tactic(fenetremain,teamdata,selected_players)
+        # except:pass
 
     def player_attributes():
         if len(comboj.get()) >1:

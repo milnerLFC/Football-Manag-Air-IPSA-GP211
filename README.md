@@ -1,6 +1,8 @@
 
 <p align="center">
-# :soccer: Football-Manag-Air-IPSA-GP211 :soccer:
+ <font size="+18">
+   Football Mang'Air IPSA
+ </font>
 </p>
 
 :warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***

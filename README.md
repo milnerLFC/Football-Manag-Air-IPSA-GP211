@@ -1,8 +1,4 @@
 # Football Mang'Air IPSA
-<p align="center">
-  <font size=48>
-    test
-   </font></p>
 
 :warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
 
@@ -19,6 +15,7 @@ Football Manag'Air en 5 points c'est :
 
 - [x] Des statistiques sur des milliers de joueurs
 
+<p align="center">:soccer::soccer::soccer:</p>
 
 
 ## Résumé
@@ -265,6 +262,8 @@ zlib                      1.2.11               h62dcd97_4
 
 zstd                      1.4.5                h04227a9_0
 ```
+
+<p align="center">:soccer::soccer::soccer:</p>
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 

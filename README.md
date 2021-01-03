@@ -42,7 +42,7 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 *Other Dataset : https://www.kaggle.com/stefanoleone992/fifa-21-complete-player-dataset*
 
 
-<center>:soccer::soccer::soccer:</center>
+<p align="center">:soccer::soccer::soccer:</p>
 
 # Packages / Librairies
 

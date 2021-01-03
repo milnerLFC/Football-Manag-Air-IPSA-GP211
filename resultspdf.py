@@ -27,7 +27,11 @@ savepath = 'saves/'
 
 def results_season(t,imEcusson,chp,fenetre_stats):
     results = []
+    team = ''
 
+    dfFull = {}
+    dfPartial = {}
+    
     def Classementdefault():
         sorted_teams = sorted(results, key=operator.itemgetter(1,8,6,3), reverse=True) #tri par Points (si égalité, par Goal Average et si encore égalité par Buts Pour). ordre de priorité conservé par la suite
         taillechp = len(sorted_teams)

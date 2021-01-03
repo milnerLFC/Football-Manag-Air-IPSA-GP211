@@ -1,5 +1,8 @@
 # Football Mang'Air IPSA
-<p align="center" size ="48">test</p>
+<p align="center">
+  <font size=48>
+    test
+   </font></p>
 
 :warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
 

@@ -44,7 +44,7 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 
 # Installation
 
-Taille : environ 1 GO *(les fichiers .wav dans './musics/ambiance' peuvent être ignorés pour alléger le téléchargement mais si le fichier est vide le programme ne fonctionnera pas)*
+Taille : +/- 1 GO *(les fichiers .wav dans './musics/ambiance' peuvent être ignorés pour alléger le téléchargement mais si le fichier est vide le programme ne fonctionnera pas)*
 
 Size : about 1 GO *(the .wav files in './musics/ambiance' can be ignored to reduce the program size and download time but if this folder is empty the program won't work)*
 
@@ -288,3 +288,5 @@ zstd                      1.4.5                h04227a9_0
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### ***Jouer comporte des risques : isolement, endettement… Appelez le 09 74 75 13 13 (appel non surtaxé)***
+
+<p align ="center">:soccer::running:</p>

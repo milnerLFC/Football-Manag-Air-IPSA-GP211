@@ -90,7 +90,7 @@ for row in data.fetchall():
     except:pass
 for pt in preTeams:
     freq = teamscount.count(pt)
-    if freq >= 4:
+    if freq >= 12:
         Teams.append(pt)
 # print(len(Teams))
 lnationalities = sorted(lnationalities, reverse = False)

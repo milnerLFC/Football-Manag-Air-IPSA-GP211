@@ -1,7 +1,5 @@
 # Football Mang'Air IPSA
 
-:warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
-
 
 Football Manag'Air en 5 points c'est :
 
@@ -41,11 +39,14 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 
 *Other Dataset : https://www.kaggle.com/stefanoleone992/fifa-21-complete-player-dataset*
 
- 
+
 <p align="center">:soccer::soccer::soccer:</p>
- 
+
  
 # Packages / Librairies
+
+:warning: ***ATTENTION : Ce programme nécessite 'tensorflow probability'. Cette librairire peut abîmer ou détruire votre installation python. Il est préférable de créer un environnement spécifique au préalable.***
+
 
 ```ruby
 Name                      Version                  Build     Channel

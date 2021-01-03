@@ -44,14 +44,14 @@ An auxiliar objective was to make the tkinter’s interface more accessible for 
 
 # Installation
 
-Taille : environ 1 GO *(les fichiers .wav dans './musics/ambiance' peuvent être ignorés pour alléger le téléchargement mais si le fichier est vide le programme ne fonctionnera pas)*
+Taille : +/- 1 GO *(les fichiers .wav dans './musics/ambiance' peuvent être ignorés pour alléger le téléchargement mais si le fichier est vide le programme ne fonctionnera pas)*
 
 Size : about 1 GO *(the .wav files in './musics/ambiance' can be ignored to reduce the program size and download time but if this folder is empty the program won't work)*
 
 
-FR : Extraires les fichiers dans le répertoire de votre choix, vérifiez que vous disposez de tous les packages nécessaires et depuis votre éditeur python lancez 'Football Manag'Air.py'. Au premier lancement il vous sera demandé de sélectionner votre club préféré.
+:fr: : Extraires les fichiers dans le répertoire de votre choix, vérifiez que vous disposez de tous les packages nécessaires et depuis votre éditeur python lancez 'Football Manag'Air.py'. Au premier lancement il vous sera demandé de sélectionner votre club préféré.
 
-EN : Extract the files in the folder of your choice and check if you have all the librairies installed then from your python editor launch 'Football Manag'Air.py'. At first launch you must chose your favorite team.
+:uk: : Extract the files in the folder of your choice and check if you have all the librairies installed then from your python editor launch 'Football Manag'Air.py'. At first launch you must chose your favorite team.
 
 # Packages / Librairies (Windows)
 

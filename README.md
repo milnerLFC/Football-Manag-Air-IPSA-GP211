@@ -51,7 +51,7 @@ Size : about 1 GO *(the .wav files in './musics/ambiance' can be ignored to redu
 
 :fr: : Extraires les fichiers dans le répertoire de votre choix, vérifiez que vous disposez de tous les packages nécessaires et depuis votre éditeur python lancez 'Football Manag'Air.py'. Au premier lancement il vous sera demandé de sélectionner votre club préféré.
 
-:en: : Extract the files in the folder of your choice and check if you have all the librairies installed then from your python editor launch 'Football Manag'Air.py'. At first launch you must chose your favorite team.
+:uk: : Extract the files in the folder of your choice and check if you have all the librairies installed then from your python editor launch 'Football Manag'Air.py'. At first launch you must chose your favorite team.
 
 # Packages / Librairies (Windows)
 
